@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title >Digital Clock</title>
+    <style>
+        #hr,#min,#sec,#dec{
+            height: 200px;
+            width: 200px;
+            background-color: black;
+            text-align: center;
+            line-height: 2.9;
+            font-size: xx-large;
+            font-weight:900;
+            color: white;
+        }
+        #clock {
+            font-size: 24px;
+        }
+        
+        #grp{
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+        }
+        #h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">Digital Clock</h1>
+    <div id="clock"></div>
+    <div id="grp">
+        <div id="hr"></div>
+        <div id="min"></div>
+        <div id="sec"></div>
+        <div id="dec"></div>
+    </div>
+    <script>
+        function Clock() {
+            var dec;
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            var hr = document.getElementById("hr").textContent = hours
+
+
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            var min = document.getElementById("min").textContent = minutes
+
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            var sec = document.getElementById("sec").textContent = seconds;
+
+            if(hours>=12){
+                dec = "PM"
+            }
+            else{
+                dec = "AM"
+            }
+            var d = document.getElementById("dec");
+            d.textContent = dec
+
+        }
+        setInterval(Clock, 1000);
+
+      
+        Clock();
+    </script>
+</body>
+</html>

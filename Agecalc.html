@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age claculator</title>
+    <style>
+        .container{
+            
+            width: 250px;
+            height: 250px;
+
+        }
+        #h2{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:rgb(19, 238, 11);
+            border:1px solid red;
+            border:hidden;
+            background-color: yellow;
+        }
+        h1{
+            /* color:; */
+            
+            margin-left: 30px;
+        }
+        .grp{
+            margin-left: 20px;
+
+        }
+        .grp label{
+            font-size: larger;
+            text-transform: capitalize;
+            margin-right: 5px;
+        }
+        #bd{
+            padding: 4px;
+        }
+        button{
+            margin-left: 70px;
+            background-color: gray;
+            border: none;
+            padding: 7px;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Age claculator</h1>
+        <div class="grp">
+            <label for="bd">Birth date</label>
+            <input type="date" id="bd" name="birthdate" value="">
+        </div>
+        <br>
+        <br>
+        <button type="button" onclick="func()">Calculate</button>
+
+
+        <h2 id="h2"></h2>
+    </div>
+
+    <script>
+        
+       
+
+        function func()
+        {
+            var now = new Date()
+            var year = now.getFullYear()
+            var mon = now.getMonth()
+            var day = now.getDate()
+
+            var dt = document.getElementById("bd").value
+            var user_dt = new Date(dt)
+            var user_year = user_dt.getFullYear()
+            var user_mon = user_dt.getMonth()
+            var user_day = user_dt.getDay()
+            if(user_year<=year)
+            {
+                var res_year = year - user_year
+                var res_mon = Math.abs(mon - user_mon)
+                var res_day =Math.abs(day - user_day) 
+
+                var result = `${res_year}yrs ${res_mon}months ${res_day}days`
+                
+                var h2 = document.getElementById("h2")
+                h2.textContent = result
+                
+            }
+            else{
+                var h2 = document.getElementById("h2")
+                h2.textContent = "your age is greater than current age!!"
+            }
+            
+
+            
+            
+
+            
+
+
+        }
+
+
+    </script>
+</body>
+</html>

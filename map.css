@@ -1,0 +1,26 @@
+    height:250px;
+    width:150px; 
+
+}
+body{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#tdsal{
+    text-align: center;
+}
+#table,#table1,#table2{
+    /* display:inline-block;*/
+    height:250px;
+    width:150px; 
+
+}
+body{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#tdsal{
+    text-align: center;
+}
